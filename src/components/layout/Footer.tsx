@@ -1,17 +1,13 @@
-
 import React from "react";
 import { Link } from "react-router-dom";
 import { Facebook, Twitter, Instagram, Mail, Phone, MapPin } from "lucide-react";
-
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
-
-  return (
-    <footer className="bg-gray-900 text-white pt-12 pb-6">
+  return <footer className="bg-gray-900 text-white pt-12 pb-6">
       <div className="container mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
-            <h3 className="text-xl font-semibold mb-4">WaveShop</h3>
+            <h3 className="text-xl font-semibold mb-4">Evansco shop</h3>
             <p className="text-gray-300 mb-4">
               Your one-stop destination for quality products at great prices.
             </p>
@@ -79,7 +75,7 @@ const Footer: React.FC = () => {
               </li>
               <li className="flex items-center">
                 <Mail size={16} className="mr-2" />
-                <span className="text-gray-300">support@waveshop.com</span>
+                <span className="text-gray-300">support@evanscoshop.com</span>
               </li>
               <li className="flex items-start">
                 <MapPin size={16} className="mr-2 mt-1" />
@@ -98,8 +94,6 @@ const Footer: React.FC = () => {
           </p>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
