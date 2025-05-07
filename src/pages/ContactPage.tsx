@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -6,33 +5,34 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "sonner";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
-
 interface FormData {
   name: string;
   email: string;
   subject: string;
   message: string;
 }
-
 const ContactPage: React.FC = () => {
   const [formData, setFormData] = useState<FormData>({
     name: "",
     email: "",
     subject: "",
-    message: "",
+    message: ""
   });
-  
   const [isSubmitting, setIsSubmitting] = useState(false);
-  
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
+    const {
+      name,
+      value
+    } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
   };
-  
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     // Simulate form submission
     setTimeout(() => {
       toast.success("Message sent successfully! We'll get back to you soon.");
@@ -40,14 +40,12 @@ const ContactPage: React.FC = () => {
         name: "",
         email: "",
         subject: "",
-        message: "",
+        message: ""
       });
       setIsSubmitting(false);
     }, 1500);
   };
-
-  return (
-    <div className="container mx-auto px-4 py-12 animate-fadeIn">
+  return <div className="container mx-auto px-4 py-12 animate-fadeIn">
       <div className="text-center mb-12">
         <h1 className="text-4xl font-bold mb-4">Contact Us</h1>
         <p className="text-gray-600 max-w-md mx-auto">
@@ -71,7 +69,7 @@ const ContactPage: React.FC = () => {
                   <Phone className="h-6 w-6 mr-4 mt-0.5" />
                   <div>
                     <h3 className="font-medium">Phone</h3>
-                    <p className="text-brand-50/90">(123) 456-7890</p>
+                    <p className="text-brand-50/90">(+254) 7456-7890</p>
                   </div>
                 </div>
                 
@@ -79,7 +77,7 @@ const ContactPage: React.FC = () => {
                   <Mail className="h-6 w-6 mr-4 mt-0.5" />
                   <div>
                     <h3 className="font-medium">Email</h3>
-                    <p className="text-brand-50/90">support@waveshop.com</p>
+                    <p className="text-brand-50/90">support@evanscoshop.com</p>
                   </div>
                 </div>
                 
@@ -128,60 +126,26 @@ const ContactPage: React.FC = () => {
                 <div className="grid grid-cols-1 gap-6">
                   <div className="space-y-2">
                     <Label htmlFor="name">Full Name</Label>
-                    <Input
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      placeholder="John Doe"
-                      required
-                    />
+                    <Input id="name" name="name" value={formData.name} onChange={handleChange} placeholder="John Doe" required />
                   </div>
                   
                   <div className="space-y-2">
                     <Label htmlFor="email">Email</Label>
-                    <Input
-                      id="email"
-                      name="email"
-                      type="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      placeholder="john.doe@example.com"
-                      required
-                    />
+                    <Input id="email" name="email" type="email" value={formData.email} onChange={handleChange} placeholder="john.doe@example.com" required />
                   </div>
                   
                   <div className="space-y-2">
                     <Label htmlFor="subject">Subject</Label>
-                    <Input
-                      id="subject"
-                      name="subject"
-                      value={formData.subject}
-                      onChange={handleChange}
-                      placeholder="How can we help you?"
-                      required
-                    />
+                    <Input id="subject" name="subject" value={formData.subject} onChange={handleChange} placeholder="How can we help you?" required />
                   </div>
                   
                   <div className="space-y-2">
                     <Label htmlFor="message">Message</Label>
-                    <Textarea
-                      id="message"
-                      name="message"
-                      value={formData.message}
-                      onChange={handleChange}
-                      placeholder="Write your message here..."
-                      rows={5}
-                      required
-                    />
+                    <Textarea id="message" name="message" value={formData.message} onChange={handleChange} placeholder="Write your message here..." rows={5} required />
                   </div>
                 </div>
                 
-                <Button 
-                  type="submit" 
-                  className="w-full bg-accent hover:bg-accent-dark"
-                  disabled={isSubmitting}
-                >
+                <Button type="submit" className="w-full bg-accent hover:bg-accent-dark" disabled={isSubmitting}>
                   <Send className="mr-2 h-4 w-4" />
                   {isSubmitting ? "Sending..." : "Send Message"}
                 </Button>
@@ -201,8 +165,6 @@ const ContactPage: React.FC = () => {
           </div>
         </div>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default ContactPage;
