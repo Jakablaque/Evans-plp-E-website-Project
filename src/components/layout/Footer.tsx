@@ -1,6 +1,8 @@
+
 import React from "react";
 import { Link } from "react-router-dom";
 import { Facebook, Twitter, Instagram, Mail, Phone, MapPin } from "lucide-react";
+
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
   return <footer className="bg-gray-900 text-white pt-12 pb-6">
@@ -90,10 +92,11 @@ const Footer: React.FC = () => {
 
         <div className="border-t border-gray-700 mt-8 pt-6">
           <p className="text-center text-gray-400 text-sm">
-            &copy; {currentYear} WaveShop. All rights reserved.
+            &copy; {currentYear} Evansco. All rights reserved.
           </p>
         </div>
       </div>
     </footer>;
 };
+
 export default Footer;
