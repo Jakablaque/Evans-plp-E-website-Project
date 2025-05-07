@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { ChevronLeft, Minus, Plus, ShoppingCart, Trash2 } from "lucide-react";
 import { useStore } from "@/contexts/StoreContext";
+import { formatCurrency } from "@/lib/utils";
 
 const CartPage: React.FC = () => {
   const navigate = useNavigate();
@@ -66,8 +67,8 @@ const CartPage: React.FC = () => {
                           <p className="text-sm text-gray-600 capitalize">{item.product.category}</p>
                         </div>
                         <div className="mt-2 sm:mt-0 text-right">
-                          <p className="font-semibold">${(item.product.price * item.quantity).toFixed(2)}</p>
-                          <p className="text-sm text-gray-500">${item.product.price.toFixed(2)} each</p>
+                          <p className="font-semibold">{formatCurrency(item.product.price * item.quantity)}</p>
+                          <p className="text-sm text-gray-500">{formatCurrency(item.product.price)} each</p>
                         </div>
                       </div>
                       <div className="flex items-center justify-between mt-4">
@@ -128,7 +129,7 @@ const CartPage: React.FC = () => {
               <div className="space-y-3">
                 <div className="flex justify-between">
                   <span className="text-gray-600">Subtotal</span>
-                  <span>${state.subtotal.toFixed(2)}</span>
+                  <span>{formatCurrency(state.subtotal)}</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-gray-600">Shipping</span>
@@ -136,12 +137,12 @@ const CartPage: React.FC = () => {
                 </div>
                 <div className="flex justify-between">
                   <span className="text-gray-600">Tax</span>
-                  <span>${(state.subtotal * 0.08).toFixed(2)}</span>
+                  <span>{formatCurrency(state.subtotal * 0.08)}</span>
                 </div>
                 <Separator />
                 <div className="flex justify-between font-semibold text-lg">
                   <span>Total</span>
-                  <span>${(state.subtotal + state.subtotal * 0.08).toFixed(2)}</span>
+                  <span>{formatCurrency(state.subtotal + state.subtotal * 0.08)}</span>
                 </div>
               </div>
               

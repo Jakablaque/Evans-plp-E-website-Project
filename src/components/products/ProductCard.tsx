@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Product } from "@/models/product";
 import { ShoppingCart, Star } from "lucide-react";
 import { useStore } from "@/contexts/StoreContext";
+import { formatCurrency } from "@/lib/utils";
 
 interface ProductCardProps {
   product: Product;
@@ -47,7 +48,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
           </div>
         </div>
         <p className="text-gray-600 text-sm line-clamp-2 mb-2">{product.description}</p>
-        <p className="text-lg font-bold text-brand-dark">${product.price.toFixed(2)}</p>
+        <p className="text-lg font-bold text-brand-dark">{formatCurrency(product.price)}</p>
       </CardContent>
       <CardFooter className="p-4 pt-0 flex justify-between">
         <Button 

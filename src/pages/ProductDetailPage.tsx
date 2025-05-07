@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { useStore } from "@/contexts/StoreContext";
 import { ShoppingCart, Heart, ChevronLeft, Minus, Plus, Star, Truck, Shield, RefreshCw } from "lucide-react";
 import { toast } from "sonner";
+import { formatCurrency } from "@/lib/utils";
 
 const ProductDetailPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -84,7 +85,7 @@ const ProductDetailPage: React.FC = () => {
             <h1 className="text-2xl md:text-3xl font-bold mb-2">{product.name}</h1>
             
             <div className="mb-6">
-              <span className="text-3xl font-bold text-brand-dark">${product.price.toFixed(2)}</span>
+              <span className="text-3xl font-bold text-brand-dark">{formatCurrency(product.price)}</span>
               {product.inStock ? (
                 <span className="ml-4 text-emerald-600 text-sm font-medium">In Stock</span>
               ) : (
@@ -146,7 +147,7 @@ const ProductDetailPage: React.FC = () => {
                   <Truck className="h-5 w-5 text-accent mr-2 mt-0.5" />
                   <div>
                     <h4 className="font-medium">Free Shipping</h4>
-                    <p className="text-sm text-gray-500">On orders over $50</p>
+                    <p className="text-sm text-gray-500">On orders over KSh 5,000</p>
                   </div>
                 </div>
                 <div className="flex items-start">
