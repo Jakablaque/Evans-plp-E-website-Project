@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { ShoppingCart, Menu, X, Search } from "lucide-react";
@@ -5,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { useStore } from "@/contexts/StoreContext";
 import { useIsMobile } from "@/hooks/use-mobile";
+
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
@@ -30,7 +32,7 @@ const Header: React.FC = () => {
   return <header className="bg-white shadow-sm sticky top-0 z-10">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          <Link to="/" className="font-bold text-2xl text-brand">EvanscoShop</Link>
+          <Link to="/" className="font-bold text-2xl text-brand">WaveShop</Link>
 
           {!isMobile && <nav className="flex items-center space-x-8">
               {navLinks.map(link => <Link key={link.path} to={link.path} className={`font-medium transition-colors ${isActive(link.path) ? "text-accent" : "text-gray-600 hover:text-accent"}`}>

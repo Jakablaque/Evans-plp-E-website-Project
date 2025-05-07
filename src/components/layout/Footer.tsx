@@ -9,7 +9,7 @@ const Footer: React.FC = () => {
       <div className="container mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
-            <h3 className="text-xl font-semibold mb-4">Evansco shop</h3>
+            <h3 className="text-xl font-semibold mb-4">Wave shop</h3>
             <p className="text-gray-300 mb-4">
               Your one-stop destination for quality products at great prices.
             </p>
@@ -77,7 +77,7 @@ const Footer: React.FC = () => {
               </li>
               <li className="flex items-center">
                 <Mail size={16} className="mr-2" />
-                <span className="text-gray-300">support@evanscoshop.com</span>
+                <span className="text-gray-300">support@waveshop.com</span>
               </li>
               <li className="flex items-start">
                 <MapPin size={16} className="mr-2 mt-1" />
@@ -92,7 +92,7 @@ const Footer: React.FC = () => {
 
         <div className="border-t border-gray-700 mt-8 pt-6">
           <p className="text-center text-gray-400 text-sm">
-            &copy; {currentYear} Evansco. All rights reserved.
+            &copy; {currentYear} Wave shop. All rights reserved.
           </p>
         </div>
       </div>
